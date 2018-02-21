@@ -14,7 +14,13 @@
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
-            <version>9.3.6.v20151106</version>
+            <version>9.4.8.v20171121</version>
+            <!--version>9.3.0.M1</version-->
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-webapp</artifactId>
+            <version>9.4.2.v20170220</version>
         </dependency>
     </dependencies>
 </project>
