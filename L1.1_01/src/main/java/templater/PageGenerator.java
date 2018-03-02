@@ -36,11 +36,10 @@ public class PageGenerator {
         Writer stream = new StringWriter();
         try {
 
-            cfg.setClassForTemplateLoading(this.getClass(), File.separator + HTML_DIR);
-          //  cfg.setDirectoryForTemplateLoading(new File("C:\\Users\\Администратор\\Documents\\NetBeansProjects\\java-web-project\\L1.1_01\\templates"));
-          // cfg.setDirectoryForTemplateLoading(new File(HTML_DIR));
-             ClassTemplateLoader ctl = new ClassTemplateLoader(getClass(), "/templates");
-             cfg.setTemplateLoader(ctl);  
+       //     cfg.setClassForTemplateLoading(this.getClass(), File.separator + HTML_DIR);
+            cfg.setDirectoryForTemplateLoading(new File("C:\\Users\\Администратор\\Documents\\NetBeansProjects\\java-web-project\\L1.1_01\\templates"));
+
+
             Template template = cfg.getTemplate(filename);
 
             template.process(data, stream);
