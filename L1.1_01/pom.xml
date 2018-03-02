@@ -35,7 +35,10 @@
                     </archive>
                     <resources>
                         <resource>
-                            <directory>${basedir}/src/main/resources/pages</directory>
+                            <directory>${project.basedir}</directory>
+                            <includes>
+                                <include>templates/*.html</include>
+                            </includes>
                         </resource>
                     </resources>
                 </configuration>
