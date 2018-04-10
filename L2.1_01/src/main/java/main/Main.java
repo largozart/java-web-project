@@ -22,8 +22,8 @@ public class Main {
         AccountService accountService = new AccountService();
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.addServlet(new ServletHolder(new SignUpServlet(accountService)), "/api/v1/signup");
-        context.addServlet(new ServletHolder(new SignInServlet(accountService)), "/api/v1/signin");
+        context.addServlet(new ServletHolder(new SignUpServlet(accountService)), "/signup");
+        context.addServlet(new ServletHolder(new SignInServlet(accountService)), "/signin");
 
         ResourceHandler resource_handler = new ResourceHandler();
         resource_handler.setResourceBase("public_html");
@@ -35,7 +35,7 @@ public class Main {
         server.setHandler(handlers);
 
         System.out.println("Server started");
-        
+
         server.start();
         server.join();
     }
