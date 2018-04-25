@@ -1,0 +1,44 @@
+04-25 15:59:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "USER_NAME" не найден
+Column "USER_NAME" not found; SQL statement:
+insert into users (user_name) values ('VALERIA') [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:648)
+	at org.h2.command.Parser.parseColumn(Parser.java:856)
+	at org.h2.command.Parser.parseColumnList(Parser.java:840)
+	at org.h2.command.Parser.parseInsert(Parser.java:1040)
+	at org.h2.command.Parser.parsePrepared(Parser.java:401)
+	at org.h2.command.Parser.parse(Parser.java:305)
+	at org.h2.command.Parser.parse(Parser.java:277)
+	at org.h2.command.Parser.prepareCommand(Parser.java:242)
+	at org.h2.engine.Session.prepareLocal(Session.java:461)
+	at org.h2.engine.Session.prepareCommand(Session.java:403)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1189)
+	at org.h2.jdbc.JdbcStatement.executeUpdateInternal(JdbcStatement.java:126)
+	at org.h2.jdbc.JdbcStatement.executeUpdate(JdbcStatement.java:115)
+	at main.Main.main(Main.java:41)
+04-25 16:02:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Недопустимое значение "0" для параметра "columnIndex"
+Invalid value "0" for parameter "columnIndex" [90008-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:228)
+	at org.h2.jdbc.JdbcResultSet.checkColumnIndex(JdbcResultSet.java:3163)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3191)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:284)
+	at main.Main.main(Main.java:48)
+04-25 16:09:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ошибка преобразования данных при конвертации "VALERIA"
+Data conversion error converting "VALERIA" [22018-187]
+04-25 16:49:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Столбец "name" не найден
+Column "name" not found [42122-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3208)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:302)
+	at main.Main.main(Main.java:36)
