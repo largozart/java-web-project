@@ -1,0 +1,8 @@
+1.mvn compile assembly:single в директории проекта
+2.cp server.jar ../tester/.server.jar
+3.cd ../teser
+4../start.sh
+
+~~ if you have a problem check port and time /tester/cfg/test.properties ~~
+
+
