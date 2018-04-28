@@ -1,6 +1,6 @@
 package dbService.dao;
 
-import dbService.dataSets.UsersDataSet;
+import dbService.dataSets.UserProfile;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -21,16 +21,16 @@ public class UsersDAO {
         this.session = session;
     }
 
-    public UsersDataSet get(long id) throws HibernateException {
-        return (UsersDataSet) session.get(UsersDataSet.class, id);
+    public UserProfile get(long id) throws HibernateException {
+        return (UserProfile) session.get(UserProfile.class, id);
     }
 
     public long getUserId(String name) throws HibernateException {
-        Criteria criteria = session.createCriteria(UsersDataSet.class);
-        return ((UsersDataSet) criteria.add(Restrictions.eq("name", name)).uniqueResult()).getId();
+        Criteria criteria = session.createCriteria(UserProfile.class);
+        return ((UserProfile) criteria.add(Restrictions.eq("name", name)).uniqueResult()).getId();
     }
 
-    public long insertUser(String name) throws HibernateException {
-        return (Long) session.save(new UsersDataSet(name));
+    public long insertUser(String name, String password) throws HibernateException {
+        return (Long) session.save(new UserProfile(name, password));
     }
 }

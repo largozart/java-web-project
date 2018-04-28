@@ -1,7 +1,9 @@
 package dbService;
 
 import dbService.dao.UsersDAO;
-import dbService.dataSets.UsersDataSet;
+import dbService.dataSets.UserProfile;
+import java.sql.Connection;
+import java.sql.SQLException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,9 +12,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.internal.SessionFactoryImpl;
 import org.hibernate.service.ServiceRegistry;
-
-import java.sql.Connection;
-import java.sql.SQLException;
 
 /**
  * @author v.chibrikov
@@ -35,7 +34,7 @@ public class DBService {
     @SuppressWarnings("UnusedDeclaration")
     private Configuration getMySqlConfiguration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(UsersDataSet.class);
+        configuration.addAnnotatedClass(UserProfile.class);
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
@@ -49,7 +48,7 @@ public class DBService {
 
     private Configuration getH2Configuration() {
         Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(UsersDataSet.class);
+        configuration.addAnnotatedClass(UserProfile.class);
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
         configuration.setProperty("hibernate.connection.driver_class", "org.h2.Driver");
@@ -62,24 +61,25 @@ public class DBService {
     }
 
 
-    public UsersDataSet getUser(long id) throws DBException {
+    public UserProfile getUser(String name) throws DBException {
         try {
             Session session = sessionFactory.openSession();
             UsersDAO dao = new UsersDAO(session);
-            UsersDataSet dataSet = dao.get(id);
+            long id = dao.getUserId(name);
+            UserProfile userProfile = dao.get(id);
             session.close();
-            return dataSet;
+            return userProfile;
         } catch (HibernateException e) {
             throw new DBException(e);
         }
     }
 
-    public long addUser(String name) throws DBException {
+    public long addUser(String name, String password) throws DBException {
         try {
             Session session = sessionFactory.openSession();
             Transaction transaction = session.beginTransaction();
             UsersDAO dao = new UsersDAO(session);
-            long id = dao.insertUser(name);
+            long id = dao.insertUser(name,password);
             transaction.commit();
             session.close();
             return id;

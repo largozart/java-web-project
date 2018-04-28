@@ -1,4 +1,7 @@
-package accounts;
+package dbService.dataSets;
+
+import java.io.Serializable;
+import javax.persistence.*;
 
 /**
  * @author v.chibrikov
@@ -7,32 +10,73 @@ package accounts;
  *         <p>
  *         Описание курса и лицензия: https://github.com/vitaly-chibrikov/stepic_java_webserver
  */
-public class UserProfile {
-    private final String login;
-    private final String pass;
-    private final String email;
+@Entity
+@Table(name = "users")
+public class UserProfile implements Serializable { // Serializable Important to Hibernate!
+    private static final long serialVersionUID = -8706689714326132798L;
 
-    public UserProfile(String login, String pass, String email) {
-        this.login = login;
-        this.pass = pass;
-        this.email = email;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "name", unique = true, updatable = false)
+    private String name;
+
+    @Column(name = "password", unique = true, updatable = false)
+    private String password;
+
+    //Important to Hibernate!
+    @SuppressWarnings("UnusedDeclaration")
+    public UserProfile() {
     }
 
-    public UserProfile(String login) {
-        this.login = login;
-        this.pass = login;
-        this.email = login;
+    @SuppressWarnings("UnusedDeclaration")
+    public UserProfile(long id, String name, String password) {
+        this.setId(id);
+        this.setName(name);
+        this.setPassword(password);
     }
 
-    public String getLogin() {
-        return login;
+    public UserProfile(String name, String password) {
+        this.setId(-1);
+        this.setName(name);
+        this.setPassword(password);
     }
 
-    public String getPass() {
-        return pass;
+    @SuppressWarnings("UnusedDeclaration")
+    public String getName() {
+        return name;
     }
 
-    public String getEmail() {
-        return email;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "UserProfile{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

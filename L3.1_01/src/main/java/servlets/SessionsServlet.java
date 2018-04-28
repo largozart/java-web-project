@@ -1,14 +1,16 @@
 package servlets;
 
 import accounts.AccountService;
-import accounts.UserProfile;
 import com.google.gson.Gson;
-
+import dbService.DBException;
+import dbService.dataSets.UserProfile;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 /**
  * @author v.chibrikov
@@ -53,8 +55,18 @@ public class SessionsServlet extends HttpServlet {
             return;
         }
 
-        UserProfile profile = accountService.getUserByLogin(login);
-        if (profile == null || !profile.getPass().equals(pass)) {
+        UserProfile profile = null;
+        try
+        {
+            profile = accountService.getUserByLogin(login);
+        }
+        catch(DBException ex)
+        {
+            Logger.getLogger(SessionsServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+        if (profile == null || !profile.getPassword().equals(pass)) {
             response.setContentType("text/html;charset=utf-8");
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;

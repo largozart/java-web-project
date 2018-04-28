@@ -8,8 +8,11 @@
 package servlets;
 
 import accounts.AccountService;
-import accounts.UserProfile;
+import dbService.DBException;
+import dbService.dataSets.UserProfile;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -42,7 +45,15 @@ public class SignInServlet extends HttpServlet
             return;
         }
 
-        UserProfile profile = accountService.getUserByLogin(login);
+        UserProfile profile=null;
+        try
+        {
+            profile = accountService.getUserByLogin(login);
+        }
+        catch(DBException ex)
+        {
+            Logger.getLogger(SignInServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         if(profile == null)
         {

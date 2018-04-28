@@ -8,8 +8,11 @@
 package servlets;
 
 import accounts.AccountService;
-import accounts.UserProfile;
+import dbService.DBException;
+import dbService.dataSets.UserProfile;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -38,8 +41,15 @@ public class SignUpServlet extends HttpServlet {
             return;
         }
 
-        UserProfile profile = new UserProfile(login);
-        accountService.addNewUser(profile);
+        UserProfile profile = new UserProfile(login,pass);
+        try
+        {
+            accountService.addNewUser(profile);
+        }
+        catch(DBException ex)
+        {
+            Logger.getLogger(SignUpServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().println("success");
         response.setStatus(HttpServletResponse.SC_OK);
