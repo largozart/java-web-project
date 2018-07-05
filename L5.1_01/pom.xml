@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>L5.1</groupId>
+    <groupId>L5.1_01</groupId>
     <artifactId>L5.1_01</artifactId>
     <version>1.0</version>
 
     <properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <org.eclipse.jetty.version>9.3.0.M1</org.eclipse.jetty.version>
         <org.apache.logging.log4j.version>2.2</org.apache.logging.log4j.version>
@@ -17,7 +17,12 @@
         <org.mockito.version>1.8.4</org.mockito.version>
     </properties>
 
-	<build>
+    <build>
+        <resources>
+            <resource>
+                <directory>cfg</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -42,6 +47,7 @@
                 </configuration>
             </plugin>
         </plugins>
+
     </build>
 
     <dependencies>
@@ -82,5 +88,5 @@
             <version>${org.mockito.version}</version>
         </dependency>
     </dependencies>
-    <name>L5.1_01</name>
+
 </project>
