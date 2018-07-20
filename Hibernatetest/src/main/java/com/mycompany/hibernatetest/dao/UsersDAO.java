@@ -17,4 +17,5 @@ public interface UsersDAO
 {
     public void save(Users user) ;
 
+    public Users findById(int id);
 }

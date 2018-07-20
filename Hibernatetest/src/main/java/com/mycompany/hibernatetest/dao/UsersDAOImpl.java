@@ -28,4 +28,8 @@ public class UsersDAOImpl implements UsersDAO
         session.close();
     }
 
+    @Override
+    public Users findById(int id) {
+        return (Users)HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Users.class, id);
+    }
 }

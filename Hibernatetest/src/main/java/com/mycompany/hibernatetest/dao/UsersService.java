@@ -27,4 +27,7 @@ public class UsersService
         dao.save(user);
     }
 
+    public Users findById(int id) {
+      return  dao.findById(id);
+    }
 }

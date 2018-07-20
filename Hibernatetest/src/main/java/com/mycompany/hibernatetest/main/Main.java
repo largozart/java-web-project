@@ -24,7 +24,6 @@ public class Main
 
         Users user = new Users();
 
-        user.setId(1);
         user.setName("wonderwoman");
 
         service.saveUser(user);
