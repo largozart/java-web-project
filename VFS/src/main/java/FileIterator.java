@@ -39,17 +39,24 @@ public class FileIterator implements Iterator <String>{
     @Override
     public void remove() {
         File file = files.remove();
-        try {
+
             if (file.isDirectory()) {
-                FileUtils.cleanDirectory(file);
+                deleteDir(file);
             } else {
                 file.delete();
             }
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+
         return;
     }
 
+
+    void deleteDir(File file) {
+        File[] contents = file.listFiles();
+        if (contents != null) {
+            for (File f : contents) {
+                deleteDir(f);
+            }
+        }
+        file.delete();
+    }
 }
