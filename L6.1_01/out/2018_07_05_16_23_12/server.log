@@ -1,0 +1,4 @@
+[07-05 16:23:13,158, 575] main.main.Main Starting at http://127.0.0.1:5050
+[07-05 16:23:13,330, 747] main.main.Main Server started
+[07-05 16:23:17,588, 5005] servlets.HomePageServlet Limit: 10. Count 0
+[07-05 16:23:17,589, 5006] servlets.HomePageServlet User pass

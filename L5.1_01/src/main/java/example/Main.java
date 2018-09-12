@@ -34,8 +34,8 @@ public class Main {
             System.exit(1);
         }
 
-        String portString = args[0];
-       // String portString = "8080";
+        //String portString = args[0];
+        String portString = "8888";
         int port = Integer.valueOf(portString);
 
         logger.info("Starting at http://127.0.0.1:" + portString);

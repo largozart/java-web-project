@@ -1,0 +1,12 @@
+[07-05 15:36:39,226, 435] main.main.Main Starting at http://127.0.0.1:5050
+[07-05 15:36:39,389, 598] main.main.Main Server started
+[07-05 15:36:47,060, 8269] servlets.HomePageServlet Limit: 1. Count 0
+[07-05 15:36:47,061, 8270] servlets.HomePageServlet User pass
+[07-05 15:38:59,590, 140799] servlets.HomePageServlet Limit: 1. Count 1
+[07-05 15:38:59,590, 140799] servlets.HomePageServlet User were rejected
+[07-05 15:40:58,488, 259697] servlets.HomePageServlet Limit: 2. Count 1
+[07-05 15:40:58,488, 259697] servlets.HomePageServlet User pass
+[07-05 15:40:59,557, 260766] servlets.HomePageServlet Limit: 2. Count 2
+[07-05 15:40:59,557, 260766] servlets.HomePageServlet User were rejected
+[07-05 15:51:43,949, 905158] servlets.HomePageServlet Limit: 2. Count 2
+[07-05 15:51:43,950, 905159] servlets.HomePageServlet User were rejected
