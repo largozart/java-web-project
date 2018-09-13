@@ -1,4 +1,0 @@
-[07-05 22:29:47,627, 531] main.main.Main Starting at http://127.0.0.1:8080
-[07-05 22:29:48,080, 984] main.main.Main Server started
-[07-05 22:29:53,596, 6500] servlets.HomePageServlet Limit: 10. Count 0
-[07-05 22:29:53,596, 6500] servlets.HomePageServlet User pass
