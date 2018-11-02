@@ -8,7 +8,7 @@ import java.lang.reflect.Field;
 public class ReflectionHelper {
     public static Object createInstance(String className) {
         try {
-            return Class.forName("xyz.enhorse.stepic.djwebservice.l062." + className).newInstance();
+            return Class.forName(className).newInstance();
         } catch (IllegalArgumentException | SecurityException | InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             e.printStackTrace();
         }

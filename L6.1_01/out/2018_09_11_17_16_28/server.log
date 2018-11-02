@@ -1,8 +1,0 @@
-[09-11 17:16:28,938, 463] main.main.Main Starting at http://127.0.0.1:8888
-[09-11 17:16:29,104, 629] main.main.Main Server started
-[09-11 17:24:00,175, 451700] servlets.HomePageServlet Limit: 10. Count 0
-[09-11 17:24:00,175, 451700] servlets.HomePageServlet User pass
-[09-11 17:24:05,384, 456909] servlets.HomePageServlet Limit: 10. Count 1
-[09-11 17:24:05,384, 456909] servlets.HomePageServlet User pass
-[09-11 17:24:10,681, 462206] servlets.HomePageServlet Limit: 10. Count 2
-[09-11 17:24:10,681, 462206] servlets.HomePageServlet User pass
