@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="ru.easyjava.data.jpa.hibernate/Hibernate" uuid="ce490f7b-4dfc-4c7e-a025-5449568e4e5b">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/valeria/IdeaProjects/SpringProject/src/main/resources/META-INF/persistence.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="3b17a365-d3a3-47ab-bdf1-bfb41ad7854a">
+      <driver-ref>h2.unified</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+/home/valeria/IdeaProjects/SpringProject/src/main/resources/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</jdbc-url>
+    </data-source>
+  </component>
+</project>

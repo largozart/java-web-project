@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">jdbc:oracle:thin:@//atlant.solvo.ru:1521/SOLVO11</property>
     <property name="hibernate.connection.username">wms_kulta91</property>
     <property name="hibernate.connection.password">oracle</property>

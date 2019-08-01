@@ -1,0 +1,8 @@
+
+asquid:S2095/"EUse try-with-resources or close this "Session" in a "finally" clause.(íÊ‹ƒúÿÿÿÿ
+T
+squid:S106'"9Replace this use of System.out or System.err by a logger.(Ñ´´·ûÿÿÿÿ
+tsquid:S14880"]Immediately return this expression instead of assigning it to the temporary variable "order".(ƒ†
+esquid:UselessImportCheck
+"<Remove this unused import 'javax.persistence.EntityManager'.(ğàËÒıÿÿÿÿ
+~squid:UselessImportCheck"URemove this unused import 'org.hibernate.resource.transaction.spi.TransactionStatus'.(ö¤›Çùÿÿÿÿ

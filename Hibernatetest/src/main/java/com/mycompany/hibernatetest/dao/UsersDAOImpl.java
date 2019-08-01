@@ -12,6 +12,7 @@ import com.mycompany.hibernatetest.util.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+
 /**
  *
  * @author vsasaeva

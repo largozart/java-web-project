@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="ru.easyjava.data.jpa.hibernate/Hibernate" uuid="ce490f7b-4dfc-4c7e-a025-5449568e4e5b">
+      <database-info product="H2" version="1.4.196 (2017-06-10)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.196 (2017-06-10)" dbms="H2" exact-version="1.4.196" exact-driver-version="1.4">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
+      <auth-required>false</auth-required>
+      <schema-mapping>
+        <introspection-scope>
+          <node kind="database" qname="@">
+            <node kind="schema" qname="@" />
+          </node>
+        </introspection-scope>
+      </schema-mapping>
+    </data-source>
+    <data-source name="hibernate.cfg.xml/Hibernate" uuid="3b17a365-d3a3-47ab-bdf1-bfb41ad7854a">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="H2" exact-version="0" />
+      <auth-required>false</auth-required>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
